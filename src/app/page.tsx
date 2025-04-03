@@ -11,48 +11,48 @@ export default async function Home() {
     (res) => res.json()
   );
 
-  const exploreData2 = [
-    {
-      img: "/banner.png",
-      distance: "45-minute drive",
-      location: "London"
-    },
-    {
-      img: "/banner.png",
-      distance: "4.5-hour drive",
-      location: "Manchester"
-    },
-    {
-      img: "/banner.png",
-      distance: "4-hour drive",
-      location: "Liverpool"
-    },
-    {
-      img: "/banner.png",
-      distance: "2-hour drive",
-      location: "York"
-    },
-    {
-      img: "/banner.png",
-      distance: "3-hour drive",
-      location: "Cardiff"
-    },
-    {
-      img: "/banner.png",
-      distance: "4.5-hour drive",
-      location: "Birkenhead"
-    },  
-    {
-      img: "/banner.png",
-      distance: "6-hour drive",
-      location: "Newquay"
-    },
-    {
-      img: "/banner.png",
-      distance: "2-hour drive",
-      location: "Hove"
-    }  
-  ]
+  // const exploreData2 = [
+  //   {
+  //     img: "/banner.png",
+  //     distance: "45-minute drive",
+  //     location: "London"
+  //   },
+  //   {
+  //     img: "/banner.png",
+  //     distance: "4.5-hour drive",
+  //     location: "Manchester"
+  //   },
+  //   {
+  //     img: "/banner.png",
+  //     distance: "4-hour drive",
+  //     location: "Liverpool"
+  //   },
+  //   {
+  //     img: "/banner.png",
+  //     distance: "2-hour drive",
+  //     location: "York"
+  //   },
+  //   {
+  //     img: "/banner.png",
+  //     distance: "3-hour drive",
+  //     location: "Cardiff"
+  //   },
+  //   {
+  //     img: "/banner.png",
+  //     distance: "4.5-hour drive",
+  //     location: "Birkenhead"
+  //   },  
+  //   {
+  //     img: "/banner.png",
+  //     distance: "6-hour drive",
+  //     location: "Newquay"
+  //   },
+  //   {
+  //     img: "/banner.png",
+  //     distance: "2-hour drive",
+  //     location: "Hove"
+  //   }  
+  // ]
 
   const cardsData = await fetch("https://www.jsonkeeper.com/b/VHHT").then(
     (res) => res.json()
