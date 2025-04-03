@@ -8,9 +8,9 @@ import {
   UsersIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRangePicker } from 'react-date-range';
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { DateRangePicker, Range, RangeKeyDict } from 'react-date-range';
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -21,20 +21,18 @@ function Header({ placeholder }: { placeholder?: string }) {
   const [noOfGuests, setNoOfGuests] = useState(1);
   const router = useRouter();
 
-  const selectionRange = {
+  const selectionRange: Range = {
     startDate: startDate,
     endDate: endDate,
     key: "selection",
   };
 
-  function handleSelect(ranges: {
-    selection: {
-      startDate: Date;
-      endDate: Date;
-    };
-  }) {
-    setStartDate(ranges.selection.startDate);
-    setEndDate(ranges.selection.endDate);
+  function handleSelect(ranges: RangeKeyDict) {
+    const { selection } = ranges;
+    if (selection?.startDate && selection?.endDate) {
+      setStartDate(selection.startDate);
+      setEndDate(selection.endDate);
+    }
   }
 
   function resetInput() {
@@ -87,7 +85,7 @@ function Header({ placeholder }: { placeholder?: string }) {
         </div>
       </div>
 
-      {/* Calender */}
+      {/* Calendar */}
       {searchInput && (
         <div className="flex flex-col col-span-3 mx-auto mt-0">
           <DateRangePicker
